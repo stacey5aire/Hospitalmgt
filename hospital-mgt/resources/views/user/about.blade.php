@@ -69,7 +69,7 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="about.html">About Us</a>
@@ -84,7 +84,10 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="#">Login / Register</a>
+              <a class="btn btn-primary ml-lg-3" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary ml-lg-3" href="#">Register</a>
             </li>
           </ul>
         </div> <!-- .navbar-collapse -->

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashBoardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,5 +30,7 @@ Route::middleware([
     })->name('dashboard');
 
     Route::post('/logoutuser', [LoginController::class, 'logout'])->name('logoutuser');
+
+    Route::get('/about', [AboutController::class, 'about'])->name('about');
     
 });
