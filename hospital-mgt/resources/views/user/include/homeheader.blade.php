@@ -56,17 +56,9 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logoutuser') }}" method="POST" style="display: none;">
-                            @csrf
-                            <!-- You can add a button or an anchor tag to trigger the form submission -->
-                            <button type="submit">Logout</button>
-                        </form>
-
-                        <!-- This link/button will trigger the form submission -->
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-
+                       <!-- <x-app-layout>
+                        </x-app-layout>    -->
                     </li>
-
                 </ul>
             </div> <!-- .navbar-collapse -->
         </div> <!-- .container -->

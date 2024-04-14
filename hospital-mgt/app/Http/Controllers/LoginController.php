@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-
 
 class LoginController extends Controller
 {
@@ -17,12 +14,9 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            $user = User::where('email', $request->email)->first();
-
-            if (($user->usertype == 1) && Auth::user()->email == $request->email) {
+            if (Auth::user()->usertype == 1) {
                 return redirect()->route('admin.dashboard');
             } else {
-
                 return redirect()->route('user.home');
             }
         }
@@ -33,4 +27,16 @@ class LoginController extends Controller
                 'email' => 'The provided credentials do not match our records.',
             ]);
     }
+
+    public function logout(Request $request)
+{
+    $request->session()->forget('user'); // Assuming you're storing user info in the session
+
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('/');
+}
+
 }

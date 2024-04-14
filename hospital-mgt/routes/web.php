@@ -27,4 +27,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::post('/logoutuser', [LoginController::class, 'logout'])->name('logoutuser');
+    
 });
