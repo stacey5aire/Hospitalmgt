@@ -72,13 +72,13 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="{{ route('about') }}">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctors</a>
+              <a class="nav-link" href="{{ route('doctor') }}">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">News</a>
+              <a class="nav-link" href="{{ route('news') }}">News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
