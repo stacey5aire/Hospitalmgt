@@ -8,8 +8,7 @@ use App\Http\Controllers\AboutController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/login', [LoginController::class, 'verify_login'])->name('login.verify');
-// Route::post('/dashboard', [DashBoardController::class, 'index'])->name('admin.dashboard')->dddddddmiddleware("auth");
+Route::post('/login/verification', [LoginController::class, 'verify_login'])->name('login.verification');
 
 Route::middleware([
     'auth:sanctum',
@@ -17,9 +16,9 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get('/admin/home', function () {
+        return view('admin.home');
+    })->name('admin.home');
 
     Route::get('/user/home', function () {
         return view('user.home');
@@ -29,8 +28,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::post('/logoutuser', [LoginController::class, 'logout'])->name('logoutuser');
-
+    Route::post('user/logout', [LoginController::class, 'logout'])->name('user.logout');
     Route::get('/about', [AboutController::class, 'about'])->name('about');
-    
 });

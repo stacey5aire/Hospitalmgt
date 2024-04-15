@@ -12,7 +12,7 @@
         </div>
         @endsession
 
-        <form method="POST" action="{{ route('login.verify') }}">
+        <form method="POST" action="{{ route('login.verification') }}">
             @csrf
 
             <div>

@@ -2,14 +2,14 @@
     <div class="topbar">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 text-sm">
+                <div class="text-sm col-sm-8">
                     <div class="site-info">
                         <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
                         <span class="divider">|</span>
                         <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
                     </div>
                 </div>
-                <div class="col-sm-4 text-right text-sm">
+                <div class="text-sm text-right col-sm-4">
                     <div class="social-mini-button">
                         <a href="#"><span class="mai-logo-facebook-f"></span></a>
                         <a href="#"><span class="mai-logo-twitter"></span></a>
@@ -21,7 +21,7 @@
         </div> <!-- .container -->
     </div> <!-- .topbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <nav class="shadow-sm navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
 
@@ -30,16 +30,18 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
+                    <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username"
+                        aria-describedby="icon-addon1">
                 </div>
             </form>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
+                aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupport">
-                <ul class="navbar-nav ml-auto">
+                <ul class="ml-auto navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
@@ -56,14 +58,15 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logoutuser') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
                             @csrf
                             <!-- You can add a button or an anchor tag to trigger the form submission -->
                             <button type="submit">Logout</button>
                         </form>
 
                         <!-- This link/button will trigger the form submission -->
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <a href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                     </li>
 
