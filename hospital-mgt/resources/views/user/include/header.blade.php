@@ -40,20 +40,23 @@
 
             <div class="collapse navbar-collapse" id="navbarSupport">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="{{ route('about') }}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">Doctors</a>
+                        <a class="nav-link" href="{{ route('doctor') }}">Doctors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">News</a>
+                        <a class="nav-link" href="{{ route('news') }}">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('appointments') }}">Appointments</a>
                     </li>
                     <li class="nav-item">
                         <form id="logout-form" action="{{ route('logoutuser') }}" method="POST" style="display: none;">
