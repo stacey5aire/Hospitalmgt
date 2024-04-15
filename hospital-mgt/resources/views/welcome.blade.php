@@ -29,22 +29,14 @@
         <div class="topbar">
             <div class="container">
                 <div class="row">
-<<<<<<< HEAD
                     <div class="col-sm-8 text-sm">
-=======
-                    <div class="text-sm col-sm-8">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                         <div class="site-info">
                             <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
                             <span class="divider">|</span>
                             <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
                         </div>
                     </div>
-<<<<<<< HEAD
                     <div class="col-sm-4 text-right text-sm">
-=======
-                    <div class="text-sm text-right col-sm-4">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                         <div class="social-mini-button">
                             <a href="#"><span class="mai-logo-facebook-f"></span></a>
                             <a href="#"><span class="mai-logo-twitter"></span></a>
@@ -56,11 +48,7 @@
             </div> <!-- .container -->
         </div> <!-- .topbar -->
 
-<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-=======
-        <nav class="shadow-sm navbar navbar-expand-lg navbar-light">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
             <div class="container">
                 <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
 
@@ -69,30 +57,21 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
                         </div>
-<<<<<<< HEAD
+
                         <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
                     </div>
                 </form>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
-=======
-                        <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username"
-                            aria-describedby="icon-addon1">
-                    </div>
-                </form>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
-                    aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
+
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupport">
-<<<<<<< HEAD
+
                     <ul class="navbar-nav ml-auto">
-=======
-                    <ul class="ml-auto navbar-nav">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
+
                         <li class="nav-item active">
                             <a class="nav-link" href="/">Home</a>
                         </li>
@@ -100,7 +79,7 @@
                             <a class="nav-link" href="{{ route('about') }}">About Us</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
+
                             <a class="nav-link" href="{{ route('doctor') }}">Doctors</a>
                         </li>
                         <li class="nav-item">
@@ -108,15 +87,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
-=======
-                            <a class="nav-link" href="doctors.html">Doctors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                         </li>
                         <li class="nav-item">
                             @if (Route::has('register'))
@@ -125,26 +95,27 @@
                             </a>
                             @endif
                         </li>
-<<<<<<< HEAD
                         <li class="nav-item">
                             @if (Route::has('login'))
                             <a href="{{ route('login') }}" class="btn btn-primary ml-lg-3">
                                 Log in
                             </a>
                             @endif
-=======
-                        <li>
-                            <a href="{{ route('login') }}" class="btn btn-primary ml-lg-3">
-                                Log in
-                            </a>
 
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                         </li>
                     </ul>
                 </div> <!-- .navbar-collapse -->
             </div> <!-- .container -->
         </nav>
     </header>
+
+    @if (session()->has('message'))
+<div class = "alert alert-success">
+    <button type = "button" class = "close" data-dismiss = "alert">x</button>
+    {{ session()->get('message') }}
+</div>
+@endif
+
     <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
@@ -157,49 +128,31 @@
 
 
     <div class="bg-light">
-<<<<<<< HEAD
+
         <div class="page-section py-3 mt-md-n5 custom-index">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4 py-3 py-md-0">
                         <div class="card-service wow fadeInUp">
                             <div class="circle-shape bg-secondary text-white">
-=======
-        <div class="py-3 page-section mt-md-n5 custom-index">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="py-3 col-md-4 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="text-white circle-shape bg-secondary">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                                 <span class="mai-chatbubbles-outline"></span>
                             </div>
                             <p><span>Chat</span> with a doctors</p>
                         </div>
                     </div>
-<<<<<<< HEAD
+
                     <div class="col-md-4 py-3 py-md-0">
                         <div class="card-service wow fadeInUp">
                             <div class="circle-shape bg-primary text-white">
-=======
-                    <div class="py-3 col-md-4 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="text-white circle-shape bg-primary">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                                 <span class="mai-shield-checkmark"></span>
                             </div>
                             <p><span>One</span>-Health Protection</p>
                         </div>
                     </div>
-<<<<<<< HEAD
+
                     <div class="col-md-4 py-3 py-md-0">
                         <div class="card-service wow fadeInUp">
                             <div class="circle-shape bg-accent text-white">
-=======
-                    <div class="py-3 col-md-4 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="text-white circle-shape bg-accent">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                                 <span class="mai-basket"></span>
                             </div>
                             <p><span>One</span>-Health Pharmacy</p>
@@ -209,7 +162,7 @@
             </div>
         </div> <!-- .page-section -->
 
-<<<<<<< HEAD
+
         <div class="page-section pb-0">
             <div class="container">
                 <div class="row align-items-center">
@@ -217,19 +170,6 @@
                         <h1>Welcome to Your Health <br> Center</h1>
                         <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
                         <a href="{{ route('about') }}" class="btn btn-primary">Learn More</a>
-=======
-        <div class="pb-0 page-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="py-3 col-lg-6 wow fadeInUp">
-                        <h1>Welcome to Your Health <br> Center</h1>
-                        <p class="mb-4 text-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                            vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius,
-                            inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi
-                            accusantium! Placeat voluptates esse ut optio facilis!</p>
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
                         <div class="img-place custom-img-1">
@@ -243,27 +183,26 @@
 
     <div class="page-section">
         <div class="container">
-<<<<<<< HEAD
             <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
             <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
-                
+
                 @foreach($doctor as $doc)
-                    <div class="item">
-                        <div class="card-doctor">
-                            <div class="header">
-                                <img src="../assets/img/doctors/doctor_1.jpg" alt="{{ $doc->name }}">
-                                <div class="meta">
-                                    <a href="#"><span class="mai-call"></span></a>
-                                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                                </div>
-                            </div>
-                            <div class="body">
-                                <p class="text-xl mb-0">{{ $doc->name }}</p>
-                                <span class="text-sm text-grey">{{ $doc->speciality }}</span>
+                <div class="item">
+                    <div class="card-doctor">
+                        <div class="header">
+                            <img src="../assets/img/doctors/doctor_1.jpg" alt="{{ $doc->name }}">
+                            <div class="meta">
+                                <a href="#"><span class="mai-call"></span></a>
+                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
                             </div>
                         </div>
+                        <div class="body">
+                            <p class="text-xl mb-0">{{ $doc->name }}</p>
+                            <span class="text-sm text-grey">{{ $doc->speciality }}</span>
+                        </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -348,172 +287,6 @@
 
                 <div class="col-12 text-center mt-4 wow zoomIn">
                     <a href="{{ route('news') }}" class="btn btn-primary">Read More</a>
-=======
-            <h1 class="mb-5 text-center wow fadeInUp">Our Doctors</h1>
-
-            <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
-                <div class="item">
-                    <div class="card-doctor">
-                        <div class="header">
-                            <img src="../assets/img/doctors/doctor_1.jpg" alt="">
-                            <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                            </div>
-                        </div>
-                        <div class="body">
-                            <p class="mb-0 text-xl">Dr. Stein Albert</p>
-                            <span class="text-sm text-grey">Cardiology</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card-doctor">
-                        <div class="header">
-                            <img src="../assets/img/doctors/doctor_2.jpg" alt="">
-                            <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                            </div>
-                        </div>
-                        <div class="body">
-                            <p class="mb-0 text-xl">Dr. Alexa Melvin</p>
-                            <span class="text-sm text-grey">Dental</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card-doctor">
-                        <div class="header">
-                            <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                            <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                            </div>
-                        </div>
-                        <div class="body">
-                            <p class="mb-0 text-xl">Dr. Rebecca Steffany</p>
-                            <span class="text-sm text-grey">General Health</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card-doctor">
-                        <div class="header">
-                            <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                            <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                            </div>
-                        </div>
-                        <div class="body">
-                            <p class="mb-0 text-xl">Dr. Rebecca Steffany</p>
-                            <span class="text-sm text-grey">General Health</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card-doctor">
-                        <div class="header">
-                            <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                            <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                            </div>
-                        </div>
-                        <div class="body">
-                            <p class="mb-0 text-xl">Dr. Rebecca Steffany</p>
-                            <span class="text-sm text-grey">General Health</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-section bg-light">
-        <div class="container">
-            <h1 class="text-center wow fadeInUp">Latest News</h1>
-            <div class="mt-5 row">
-                <div class="py-2 col-lg-4 wow zoomIn">
-                    <div class="card-blog">
-                        <div class="header">
-                            <div class="post-category">
-                                <a href="#">Covid19</a>
-                            </div>
-                            <a href="blog-details.html" class="post-thumb">
-                                <img src="../assets/img/blog/blog_1.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">List of Countries without Coronavirus
-                                    case</a></h5>
-                            <div class="site-info">
-                                <div class="mr-2 avatar">
-                                    <div class="avatar-img">
-                                        <img src="../assets/img/person/person_1.jpg" alt="">
-                                    </div>
-                                    <span>Roger Adams</span>
-                                </div>
-                                <span class="mai-time"></span> 1 week ago
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-2 col-lg-4 wow zoomIn">
-                    <div class="card-blog">
-                        <div class="header">
-                            <div class="post-category">
-                                <a href="#">Covid19</a>
-                            </div>
-                            <a href="blog-details.html" class="post-thumb">
-                                <img src="../assets/img/blog/blog_2.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">Recovery Room: News beyond the
-                                    pandemic</a></h5>
-                            <div class="site-info">
-                                <div class="mr-2 avatar">
-                                    <div class="avatar-img">
-                                        <img src="../assets/img/person/person_1.jpg" alt="">
-                                    </div>
-                                    <span>Roger Adams</span>
-                                </div>
-                                <span class="mai-time"></span> 4 weeks ago
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-2 col-lg-4 wow zoomIn">
-                    <div class="card-blog">
-                        <div class="header">
-                            <div class="post-category">
-                                <a href="#">Covid19</a>
-                            </div>
-                            <a href="blog-details.html" class="post-thumb">
-                                <img src="../assets/img/blog/blog_3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">What is the impact of eating too much
-                                    sugar?</a></h5>
-                            <div class="site-info">
-                                <div class="mr-2 avatar">
-                                    <div class="avatar-img">
-                                        <img src="../assets/img/person/person_2.jpg" alt="">
-                                    </div>
-                                    <span>Diego Simmons</span>
-                                </div>
-                                <span class="mai-time"></span> 2 months ago
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4 text-center col-12 wow zoomIn">
-                    <a href="blog.html" class="btn btn-primary">Read More</a>
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                 </div>
 
             </div>
@@ -524,43 +297,34 @@
         <div class="container">
             <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
 
-            <form class="main-form">
-<<<<<<< HEAD
+            <form class="main-form" action="{{url('appointment')}}" method="POST">
+
+                @csrf
+
                 <div class="row mt-5 ">
                     <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
-                        <input type="text" class="form-control" placeholder="Full name">
+                        <input type="text" name="name" class="form-control" placeholder="Full name">
                     </div>
                     <div class="col-12 col-sm-6 py-2 wow fadeInRight">
-                        <input type="text" class="form-control" placeholder="Email address..">
+                        <input type="text"  name="email" class="form-control" placeholder="Email address..">
                     </div>
                     <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
-                        <input type="date" class="form-control">
+                        <input type="date" name="date" class="form-control">
                     </div>
                     <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
-=======
-                <div class="mt-5 row ">
-                    <div class="py-2 col-12 col-sm-6 wow fadeInLeft">
-                        <input type="text" class="form-control" placeholder="Full name">
-                    </div>
-                    <div class="py-2 col-12 col-sm-6 wow fadeInRight">
-                        <input type="text" class="form-control" placeholder="Email address..">
-                    </div>
-                    <div class="py-2 col-12 col-sm-6 wow fadeInLeft" data-wow-delay="300ms">
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="py-2 col-12 col-sm-6 wow fadeInRight" data-wow-delay="300ms">
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
-                        <select name="departement" id="departement" class="custom-select">
-                            <option value="general">General Health</option>
-                            <option value="cardiology">Cardiology</option>
-                            <option value="dental">Dental</option>
-                            <option value="neurology">Neurology</option>
-                            <option value="orthopaedics">Orthopaedics</option>
+                        <select name="doctor" id="departement" class="custom-select">
+                            <option>Select doctor</option>
+
+                            @foreach($doctor as $doctors)
+
+                            <option value="{{$doctors->name}}">{{$doctors->name}} **Speciality** {{$doctors->speciality}}</option>
+
+                            @endforeach
                         </select>
                     </div>
-<<<<<<< HEAD
+
                     <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                        <input type="text" class="form-control" placeholder="Number..">
+                        <input type="text" name="number" class="form-control" placeholder="Number..">
                     </div>
                     <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
                         <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
@@ -568,18 +332,6 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
-=======
-                    <div class="py-2 col-12 wow fadeInUp" data-wow-delay="300ms">
-                        <input type="text" class="form-control" placeholder="Number..">
-                    </div>
-                    <div class="py-2 col-12 wow fadeInUp" data-wow-delay="300ms">
-                        <textarea name="message" id="message" class="form-control" rows="6"
-                            placeholder="Enter message.."></textarea>
-                    </div>
-                </div>
-
-                <button type="submit" class="mt-3 btn btn-primary wow zoomIn">Submit Request</button>
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
             </form>
         </div>
     </div>
@@ -593,12 +345,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 wow fadeInRight">
-<<<<<<< HEAD
                     <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
-=======
-                    <h1 class="mb-3 font-weight-normal">Get easy access of all features using One Health Application
-                    </h1>
->>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
                     <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
                     <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
                 </div>
