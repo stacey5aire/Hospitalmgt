@@ -2632,3 +2632,7 @@
 .mai-woman-outline:before {
   content: "\eba1";
 }
+
+.active-page a {
+  color: green; /* Change to your desired color */
+}

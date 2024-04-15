@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,6 +95,10 @@
       </div> <!-- .container -->
     </nav>
   </header>
+=======
+@extends('user.master')
+@section('content')
+>>>>>>> 37f03ff94311aaa24d9afcddfdd21bca101ca736
 
   <div class="page-banner overlay-dark bg-image" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="banner-section">
@@ -437,6 +442,7 @@
     </div> <!-- .container -->
   </div> <!-- .banner-home -->
 
+<<<<<<< HEAD
   <footer class="page-footer">
     <div class="container">
       <div class="row px-md-3">
@@ -501,3 +507,6 @@
   
 </body>
 </html>
+=======
+@endsection
+>>>>>>> 37f03ff94311aaa24d9afcddfdd21bca101ca736

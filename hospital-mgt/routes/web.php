@@ -5,15 +5,16 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AddDoctorController;
-use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PharmacyController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\AppointmentsController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/login', [LoginController::class, 'verify_login'])->name('login.verify');
-// Route::post('/dashboard', [DashBoardController::class, 'index'])->name('admin.dashboard')->dddddddmiddleware("auth");
 
 Route::middleware([
     'auth:sanctum',
@@ -34,17 +35,17 @@ Route::middleware([
     })->name('dashboard');
 
     Route::post('/logoutuser', [LoginController::class, 'logout'])->name('logoutuser');
-
     Route::get('/about', [AboutController::class, 'about'])->name('about');
-
     Route::get('/doctor', [DoctorController::class, 'doctor'])->name('doctor');
-
+    Route::get('/news', [NewsController::class, 'news'])->name('news');
     Route::get('/news', [NewsController::class, 'news'])->name('news');
 
+
+
+    //ADMIN Routes.
     Route::get('/admin/doctor', [DoctorController::class, 'doctorList'])->name('admin.doctor');
     Route::get('/admin/add', [AddDoctorController::class, 'index'])->name('admin.add.doctor');
     Route::get('/admin/edit', [AddDoctorController::class, 'edit'])->name('admin.edit.doctor');
-
     Route::get('/admin/pharmaceutical', [PharmacyController::class, 'index'])->name('admin.pharmaceutical');
-    Route::get('/admin/purchase', [PharmacyController::class, 'create'])->name('admin.add.purchase');
+    Route::get('/admin/add/purchase', [PharmacyController::class, 'create'])->name('admin.add.purchase');
 });

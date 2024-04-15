@@ -5,3 +5,7 @@
 [x-cloak] {
     display: none;
 }
+
+.active-page a {
+    color: green; /* Change to your desired color */
+}
