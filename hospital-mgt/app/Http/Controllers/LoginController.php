@@ -14,29 +14,33 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            if (Auth::user()->usertype == 1) {
-                return redirect()->route('admin.dashboard');
+
+            if (Auth::id()) {
+                if (Auth::user()->usertype == 1) {
+                    return redirect()->route('admin.home');
+                } else {
+                    return redirect()->route('user.home');
+                }
             } else {
-                return redirect()->route('user.home');
+                return redirect()->back();
             }
         }
 
-        return redirect()->route('login')
-            ->withInput($request->only('email', 'remember'))
-            ->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ]);
+        // return redirect()->route('login')
+        //     ->withInput($request->only('email', 'remember'))
+        //     ->withErrors([
+        //         'email' => 'The provided credentials do not match our records.',
+        //     ]);
     }
 
     public function logout(Request $request)
-{
-    $request->session()->forget('user'); // Assuming you're storing user info in the session
+    {
+        $request->session()->forget('user'); // Assuming you're storing user info in the session
 
-    $request->session()->invalidate();
+        $request->session()->invalidate();
 
-    $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-    return redirect('/');
-}
-
+        return redirect('/');
+    }
 }

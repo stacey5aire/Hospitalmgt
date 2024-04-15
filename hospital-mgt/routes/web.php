@@ -4,6 +4,7 @@ use App\Http\Controllers\DashBoardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+<<<<<<< HEAD
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
@@ -17,6 +18,13 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [LandingController::class, 'landing']);
 Route::post('/login', [LoginController::class, 'verify_login'])->name('login.verify');
 // Route::post('/dashboard', [DashBoardController::class, 'index'])->name('admin.dashboard')->dddddddmiddleware("auth");
+=======
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::post('/login/verification', [LoginController::class, 'verify_login'])->name('login.verification');
+>>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f
 
 Route::middleware([
     'auth:sanctum',
@@ -24,9 +32,9 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get('/admin/home', function () {
+        return view('admin.home');
+    })->name('admin.home');
 
     Route::get('/user/home', [HomeController::class, 'home'])->name('user.home');
 
@@ -34,6 +42,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+<<<<<<< HEAD
     Route::post('/logoutuser', [LoginController::class, 'logout'])->name('logoutuser');
 
     Route::get('/about', [AboutController::class, 'about'])->name('about');
@@ -49,3 +58,8 @@ Route::middleware([
     Route::get('/consult', [ConsultController::class, 'consult'])->name('consult');
     
 });
+=======
+    Route::post('user/logout', [LoginController::class, 'logout'])->name('user.logout');
+    Route::get('/about', [AboutController::class, 'about'])->name('about');
+});
+>>>>>>> 5d96f54be2d3340f2c77c08bd6fe5e6526e3a95f

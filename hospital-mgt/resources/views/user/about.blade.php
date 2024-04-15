@@ -1,5 +1,7 @@
+
 @extends('user.master')
 @section('content')
+
 
   <div class="page-banner overlay-dark bg-image" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="banner-section">
