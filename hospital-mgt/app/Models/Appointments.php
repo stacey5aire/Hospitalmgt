@@ -13,4 +13,5 @@ class Appointments extends Model
 
 
     // protected $fillable = ['name', 'phone', 'speciality', 'room', 'time', 'day', 'fee', 'description', 'image'];
+
 }
