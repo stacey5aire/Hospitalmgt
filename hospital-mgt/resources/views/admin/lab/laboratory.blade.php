@@ -10,47 +10,37 @@
 <div class="col-lg-12 stretch-card" style="min-height: 28em">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Appointments</h4>
+            <h4 class="card-title">Lab Orders</h4>
             <div class="text-end mb-2">
                 <input type="text" id="searchInput" placeholder="Search Table">
             </div>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover table-contextual">
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Patient ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Doctor</th>
-                            <th>Doctor ID</th>
+                            <th>#</th>
+                            <th>Client ID</th>
+                            <th>Client Name</th>
+                            <th>Order No</th>
+                            <th>Test</th>
+                            <th>Product Cost</th>
+                            <th>Payment Status</th>
                             <th>Date</th>
-                            <th>Fee</th>
-                            <th>Message</th>
-                            <th>Status</th>
-                            <th>Actions
-                                <p>(On Appointment)</p>
-                            </th>
+                            <th>Delivery</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($appointments as $apt)
+                        @foreach ($lab_orders as $order)
                         <tr>
-                            <td>{{ $apt->id }}</td>
-                            <td>{{ $apt->name }}</td>
-                            <td>{{ $apt->email }}</td>
-                            <td>{{ $apt->phone }}</td>
-                            <td>{{ $apt->doctor }}</td>
-                            <td>{{ $apt->doctor_id }}</td>
-                            <td>{{ $apt->date }}</td>
-                            <td>{{ $apt->fee }}</td>
-                            <td>{{ $apt->message }}</td>
-                            <td>{{ $apt->status }}</td>
-                            <td>
-                                @if ($apt->status == "Approved")
-                                <button class="btn btn-danger">Cancel</button>
-                                @endif
-                            </td>
+                            <td>{{$order->id}}</td>
+                            <td>{{$order->user_id}}</td>
+                            <td>{{$order->name}}</td>
+                            <td>{{$order->test_id}}-{{$order->id}}{{$order->user_id}}</td>
+                            <td>{{$order->test_name}}</td>
+                            <td>{{$order->price}}</td>
+                            <td>{{$order->payment_status}}</td>
+                            <td>{{$order->date}}</td>
+                            <td>{{$order->delivery_status}}</td>
                         </tr>
                         @endforeach
                     </tbody>

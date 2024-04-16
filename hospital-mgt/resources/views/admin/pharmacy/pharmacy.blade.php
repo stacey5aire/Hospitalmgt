@@ -1,63 +1,102 @@
 @extends('admin.master')
 
 @section('content')
-
+<h3 class="card-title">Purchased Medicines Status</h3>
 <div class="p-2 text-end align-right">
     <a href="{{ route('admin.add.purchase') }}">
         <button class="btn btn-primary">Add A Purchase Receipt</button>
     </a>
 </div>
 
-<div class="col-lg-12 stretch-card " style="min-height: 28em">
+<div class="col-lg-12 stretch-card" style="min-height: 28em">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Purchased Medicines Status</h4>
-            {{-- <p class="card-description"> Add class <code>.table-{color}</code> --}}
-            </p>
+            <div class="text-end mb-2">
+                <input type="text" id="searchInput" placeholder="Search Table">
+            </div>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover table-contextual">
+                <table id="pharmacyTable" class="table table-bordered table-hover table-contextual">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>User Name</th>
-
-                            <th>Email</th>
-                            <th>Phone</th>
                             <th>Medicine Name</th>
-                            <th>Medicine ID</th>
+                            <th>Code</th>
+                            <th>Description</th>
+                            <th>Vendor</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Vendor</th>
+                            <th>Total</th>
                             <th>Date</th>
-                            <th>Payment Status</th>
-                            <th>Delivery Status</th>
-                            <th>Created At</th>
-
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        $totalquantity = 0;
+                        $totalprice = 0;
+                        ?>
+                        @foreach ($pharmacies as $pharmacy)
                         <tr>
-                            <td>1</td>
-                            <td>Herman Beck</td>
-
-                            <td>herman@example.com</td>
-                            <td>123456789</td>
-                            <td>Photoshop</td>
-                            <td>456</td>
-                            <td>$77.99</td>
-                            <td>1</td>
-                            <td>Vendor X</td>
-                            <td>2024-04-15</td>
-                            <td>Paid</td>
-                            <td>Not Delivered</td>
-                            <td>2024-04-15 10:00:00</td>
-
+                            <td>{{ $pharmacy->id }}</td>
+                            <td>{{ $pharmacy->name }}</td>
+                            <td>{{ $pharmacy->code }}</td>
+                            <td>{{ $pharmacy->description }}</td>
+                            <td>{{ $pharmacy->vendor }}</td>
+                            <td>{{ number_format($pharmacy->price, 2) }}</td>
+                            <td>{{ number_format($pharmacy->quantity) }}</td>
+                            <td>{{ number_format($pharmacy->price * $pharmacy->quantity, 2) }}</td>
+                            <td>{{ $pharmacy->date }}</td>
+                            <?php
+                            $totalquantity += $pharmacy->quantity;
+                            $price = $pharmacy->price * $pharmacy->quantity;
+                            $totalprice += $price;
+                            ?>
+                        </tr>
+                        @endforeach
+                        <tr>
+                            <td colspan="6"></td>
+                            <td>Total Quantity: {{ number_format($totalquantity) }}</td>
+                            <td>Total Price: {{ number_format($totalprice, 2) }}</td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var searchInput = document.getElementById("searchInput");
+        var table = document.getElementById("pharmacyTable");
+        var rows = table.getElementsByTagName("tr");
+
+        searchInput.addEventListener("keyup", function () {
+            var filter = searchInput.value.toLowerCase();
+            for (var i = 1; i < rows.length; i++) {
+                var row = rows[i];
+                var cells = row.getElementsByTagName("td");
+                var found = false;
+                for (var j = 0; j < cells.length; j++) {
+                    var cell = cells[j];
+                    if (cell) {
+                        var textValue = cell.textContent || cell.innerText;
+                        if (textValue.toLowerCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            }
+        });
+    });
+</script>
+
+
+
 @endsection

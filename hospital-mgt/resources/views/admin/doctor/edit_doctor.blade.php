@@ -52,7 +52,7 @@
                             <label class="col-sm-3 col-form-label">Speciality</label>
                             <div class="col-sm-9">
                                 <select class="form-control">
-                                    <option>Surgeon</option>
+                                    <option selected>Surgeon</option>
                                     <option>Dentist</option>
                                     {{-- <option>Nurse</option> --}}
                                     <option>OPtician</option>
@@ -136,4 +136,4 @@
     </div>
 </div>
 
-@endsection
+@endsection"

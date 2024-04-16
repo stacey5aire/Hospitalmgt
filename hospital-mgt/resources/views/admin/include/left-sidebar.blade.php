@@ -1,7 +1,15 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="#"><img src="assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="#"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+    <div class="pt-2 sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="{{ route('admin.dashboard') }}">
+            {{-- <img src="assets/images/logo.svg" alt="logo" /> --}}
+            <h2 class="text-center text-primary">Atlas Hospital <span class="menu-icon">
+                    <i class="mdi mdi-ambulance"></i>
+                </span></h2>
+        </a>
+        <a class="sidebar-brand brand-logo-mini" href="{{ route('admin.dashboard') }}">
+            {{-- <img src="assets/images/logo-mini.svg" alt="logo" /> --}}
+            <h1>Atlas Hospital</h1>
+        </a>
 
     </div>
     <ul class="nav">
@@ -13,8 +21,8 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                        <span>Gold Member</span>
+                        <h5 class="mb-0 font-weight-normal">{{ auth()->user()->name; }}</h5>
+                        <span>Admin</span>
                     </div>
                 </div>
                 <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -58,10 +66,20 @@
         <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
         </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.dashboard') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-ambulance"></i>
+                </span>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ route('admin.doctor')}}">
                 <span class="menu-icon">
-                    <i class="mdi mdi-speedometer"></i>
+                    <i class="mdi mdi-account-multiple"></i>
                 </span>
                 <span class="menu-title">Doctors</span>
             </a>
@@ -70,7 +88,7 @@
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ route('admin.pharmaceutical')}}">
                 <span class="menu-icon">
-                    <i class="mdi mdi-speedometer"></i>
+                    <i class="mdi mdi-flask-empty"></i>
                 </span>
                 <span class="menu-title">Pharmacy</span>
             </a>
@@ -86,6 +104,15 @@
         </li>
 
         <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.lab.order')}}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-apps"></i>
+                </span>
+                <span class="menu-title">Lab Orders</span>
+            </a>
+        </li>
+
+        {{-- <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
                 <span class="menu-icon">
@@ -134,7 +161,7 @@
                 </span>
                 <span class="menu-title">Icons</span>
             </a>
-        </li>
+        </li> --}}
         <!-- <li class="nav-item menu-items">
                     <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                         <span class="menu-icon">

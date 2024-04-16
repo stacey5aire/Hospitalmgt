@@ -3,32 +3,7 @@
 @section('content')
 
 <div class="content-wrapper">
-    <div class="row">
-        <div class="col-12 grid-margin stretch-card">
-            <div class="card corona-gradient-card">
-                <div class="px-0 py-0 card-body px-sm-3">
-                    <div class="row align-items-center">
-                        <div class="col-4 col-sm-3 col-xl-2">
-                            <img src="../admin/assets/images/dashboard/Group126@2x.png"
-                                class="gradient-corona-img img-fluid" alt="">
-                        </div>
-                        <div class="p-0 col-5 col-sm-7 col-xl-8">
-                            <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-                            <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro
-                                version with 5 unique layouts!</p>
-                        </div>
-                        <div class="text-center col-3 col-sm-2 col-xl-2 ps-0">
-                            <span>
-                                <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank"
-                                    class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to
-                                    PRO</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="row">
         <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div class="card">
@@ -36,8 +11,9 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$12.34</h3>
-                                <p class="mb-0 text-success ms-2 font-weight-medium">+3.5%</p>
+                                <h3 class="mb-0">Shs. {{number_format($medical_order_expenses[0]->expense, 0,'.',',') }}
+                                </h3>
+                                {{-- <p class="mb-0 text-success ms-2 font-weight-medium">+3.5%</p> --}}
                             </div>
                         </div>
                         <div class="col-3">
@@ -46,7 +22,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Potential growth</h6>
+                    <h6 class="text-muted font-weight-normal">Medic Order Expenses</h6>
                 </div>
             </div>
         </div>
@@ -56,8 +32,8 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$17.34</h3>
-                                <p class="mb-0 text-success ms-2 font-weight-medium">+11%</p>
+                                <h3 class="mb-0">Shs. {{$doctor_salary_expenses[0]->doctor_expenses}}</h3>
+                                <p class="mb-0 text-success ms-2 font-weight-medium">+2%</p>
                             </div>
                         </div>
                         <div class="col-3">
@@ -66,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Revenue current</h6>
+                    <h6 class="text-muted font-weight-normal">Total Doctors Salary</h6>
                 </div>
             </div>
         </div>
@@ -76,8 +52,9 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">$12.34</h3>
-                                <p class="mb-0 text-danger ms-2 font-weight-medium">-2.4%</p>
+                                <h3 class="mb-0">Shs. {{
+                                    number_format($total_lab_order_income[0]->total_lab_order_income,0,'.',',') }}</h3>
+                                {{-- <p class="mb-0 text-danger ms-2 font-weight-medium">-2.4%</p> --}}
                             </div>
                         </div>
                         <div class="col-3">
@@ -86,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Daily Income</h6>
+                    <h6 class="text-muted font-weight-normal">Total Lab Order Income</h6>
                 </div>
             </div>
         </div>
@@ -112,31 +89,39 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card corona-gradient-card">
+                <div class="px-0 py-0 card-body px-sm-3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-4 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Transaction History</h4>
+                    <h4 class="card-title">Total Monthly Transaction </h4>
                     <canvas id="transaction-history" class="transaction-chart"></canvas>
                     <div
                         class="flex-row px-4 py-3 mt-3 rounded bg-gray-dark d-flex d-md-block d-xl-flex px-md-3 px-xl-4">
                         <div class="text-md-center text-xl-left">
-                            <h6 class="mb-1">Transfer to Paypal</h6>
-                            <p class="mb-0 text-muted">07 Jan 2019, 09:12AM</p>
+                            <h6 class="mb-1">Total Income</h6>
+                            <p class="mb-0 text-muted">Jan </p>
                         </div>
                         <div
                             class="flex-grow text-right align-self-center text-md-center text-xl-right py-md-2 py-xl-0">
-                            <h6 class="mb-0 font-weight-bold">$236</h6>
+                            <h6 class="mb-0 font-weight-bold">$1000000</h6>
                         </div>
                     </div>
                     <div
                         class="flex-row px-4 py-3 mt-3 rounded bg-gray-dark d-flex d-md-block d-xl-flex px-md-3 px-xl-4">
                         <div class="text-md-center text-xl-left">
-                            <h6 class="mb-1">Tranfer to Stripe</h6>
-                            <p class="mb-0 text-muted">07 Jan 2019, 09:12AM</p>
+                            <h6 class="mb-1">Total Expenses</h6>
+                            <p class="mb-0 text-muted">Jan </p>
                         </div>
                         <div
                             class="flex-grow text-right align-self-center text-md-center text-xl-right py-md-2 py-xl-0">
-                            <h6 class="mb-0 font-weight-bold">$593</h6>
+                            <h6 class="mb-0 font-weight-bold">$1000000</h6>
                         </div>
                     </div>
                 </div>
@@ -244,6 +229,26 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Line chart</h4>
+                    <canvas id="lineChart" style="height:250px"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Bar chart</h4>
+                    <canvas id="barChart" style="height:230px"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-4 grid-margin">
             <div class="card">
@@ -307,7 +312,7 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Order Status</h4>
+                    <h4 class="card-title">Top Order Status</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -683,4 +688,19 @@
 
 <!-- partial -->
 
+<script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="../../assets/vendors/chart.js/Chart.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="../admin/assets/js/off-canvas.js"></script>
+<script src="../admin/assets/js/hoverable-collapse.js"></script>
+<script src="../admin/assets/js/misc.js"></script>
+<script src="../admin/assets/js/settings.js"></script>
+<script src="../admin/assets/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="../../assets/js/chart.js"></script>
+<!-- End custom js for this page -->
 @endsection
