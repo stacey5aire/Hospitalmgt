@@ -16,21 +16,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\PatientsController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::post('/login', [LoginController::class, 'verify_login'])->name('login.verify');
-
-
-
-
 Route::get('/', [LandingController::class, 'landing']);
 Route::post('/login', [LoginController::class, 'verify_login'])->name('login.verify');
-
-// Route::post('/dashboard', [DashBoardController::class, 'index'])->name('admin.dashboard')->dddddddmiddleware("auth");
-
-
-
 Route::post('/login/verification', [LoginController::class, 'verify_login'])->name('login.verification');
 
 
@@ -45,9 +34,8 @@ Route::middleware([
         [DashBoardController::class, 'index']
     )->name('admin.dashboard');
 
-    Route::get('/user/home', function () {
-        return view('user.home');
-    })->name('user.home');
+    Route::get('/user/home', [HomeController::class, 'home'])->name('user.home');
+
 
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -66,7 +54,14 @@ Route::middleware([
     Route::post('user/logout', [LoginController::class, 'logout'])->name('user.logout');
     Route::get('/about', [AboutController::class, 'about'])->name('about');
     Route::post('/appointment', [HomeController::class, 'appointment'])->name('appointment');
-
+    Route::get('/about', [AboutController::class, 'about'])->name('about');
+    Route::get('/doctor', [DoctorController::class, 'doctor'])->name('doctor');
+    Route::get('/news', [NewsController::class, 'news'])->name('news');
+    Route::get('/myappointments', [AppointmentsController::class, 'appointments'])->name('myappointments');
+    Route::get('/consult', [ConsultController::class, 'consult'])->name('consult');
+    Route::get('/cancel_appoint/{id}', [AppointmentsController::class, 'cancel_appoint'])->name('cancel_appoint');
+    Route::post('/get_in_touch', [ContactController::class, 'get_in_touch'])->name('get_in_touch');
+    Route::post('/make_consultation', [ConsultController::class, 'make_consultation'])->name('make_consultation');
 
 
 
