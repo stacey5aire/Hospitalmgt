@@ -18,8 +18,8 @@ class LoginController extends Controller
             if (Auth::user()->usertype == 1) {
 
                 $notification_data = DB::select('SELECT users.name, users.phone, notifications.type, notifications.data, notifications.created_at FROM `users` join `notifications` on users.id=notifications.notifiable_id where users.usertype !=1');
-                $request->set_session();
-                $_SESSION['notification'] = $notification_data;
+                // $request->set_session();
+                // $_SESSION['notification'] = $notification_data;
 
                 return redirect()->route('admin.dashboard');
             } else {
