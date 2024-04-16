@@ -177,11 +177,7 @@
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    {{-- <form id="logout-form" action="{{ route('logoutuser') }}" method="POST" style="display: none;">
-                        @csrf
-                        <!-- You can add a button or an anchor tag to trigger the form submission -->
-                        <button type="submit">Logout</button>
-                    </form> --}}
+
                     <a class="dropdown-item preview-item" href="{{ route('admin.logout') }}">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
