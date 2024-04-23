@@ -67,11 +67,20 @@ Route::middleware([
 
     //ADMIN Routes.
     Route::get('/admin/doctor', [DoctorController::class, 'doctorList'])->name('admin.doctor');
+
+    //doctor
     Route::get('/admin/add', [AddDoctorController::class, 'index'])->name('admin.add.doctor');
     Route::get('/admin/edit/{id}', [AddDoctorController::class, 'edit'])->name('admin.edit.doctor');
+    Route::post('admin/add/doctor', [AddDoctorController::class, 'addNewDoctor'])->name('admin.add.new.doctor');
+    Route::post('admin/edit/doctor', [AddDoctorController::class, 'editDoctor'])->name('admin.edit.doctor.record');
+
+    Route::get('/admin/details/', [DoctorController::class, 'doctorDetails'])->name('admin.edit.doctor');
+    Route::post('/admin/save/edit', [DoctorController::class, 'store'])->name('admin.save.edit');
+
+
     Route::get('/admin/delete/{id}', [AddDoctorController::class, 'delete'])->name('admin.delete.doctor');
     Route::get('/admin/pharmaceutical', [PharmacyController::class, 'index'])->name('admin.pharmaceutical');
-    Route::get('/admin/add/purchase', [PharmacyController::class, 'create'])->name('admin.add.purchase');
+    Route::post('/admin/pharmacy/purchase', [PharmacyController::class, 'makePurchase'])->name('admin.pharmacy.purchase');
     Route::get('/admin/patients', [PatientsController::class, 'index'])->name('admin.patients');
 
     Route::get('/admin/lab', [LabController::class, 'index'])->name('admin.lab.order');

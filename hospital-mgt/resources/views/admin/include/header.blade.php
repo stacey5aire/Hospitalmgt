@@ -1,9 +1,7 @@
 <nav class="flex-row p-0 navbar fixed-top d-flex">
-    <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo-mini" href="{{ route('admin.dashboard') }}"><img
-                src="assets/images/logo-mini.svg" alt="logo" />
-        </a>
-    </div>
+    {{-- <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+
+    </div> --}}
     <div class="flex-grow navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
@@ -16,53 +14,7 @@
             </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-            <!-- <li class="nav-item dropdown d-none d-lg-block">
-                            <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
-                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                                <h6 class="p-3 mb-0">Projects</h6>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-file-outline text-primary"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="mb-1 preview-subject ellipsis">Software Development</p>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-web text-info"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="mb-1 preview-subject ellipsis">UI Development</p>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-layers text-danger"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="mb-1 preview-subject ellipsis">Software Testing</p>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <p class="p-3 mb-0 text-center">See all projects</p>
-                            </div>
-                        </li> -->
-            <!-- <li class="nav-item nav-settings d-none d-lg-block">
-                            <a class="nav-link" href="#">
-                                <i class="mdi mdi-view-grid"></i>
-                            </a>
-                        </li> -->
-            <li class="nav-item dropdown border-left">
+            {{-- <li class="nav-item dropdown border-left">
                 <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="mdi mdi-email"></i>
@@ -104,54 +56,38 @@
                     <div class="dropdown-divider"></div>
                     <p class="p-3 mb-0 text-center">4 new messages</p>
                 </div>
-            </li>
+            </li> --}}
             <li class="nav-item dropdown border-left">
                 <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
                     data-bs-toggle="dropdown">
                     <i class="mdi mdi-bell"></i>
-                    <span class="count bg-danger"></span>
+
+
+                    <span class="count text-danger">
+                        {{ $notification->count() }}
+                    </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                     aria-labelledby="notificationDropdown">
                     <h6 class="p-3 mb-0">Notifications</h6>
                     <div class="dropdown-divider"></div>
+
+                    @foreach ($notification as $not )
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-calendar text-success"></i>
+                                <i class="mdi mdi-bell text-success"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="mb-1 preview-subject">Event today</p>
-                            <p class="mb-0 text-muted ellipsis"> Just a reminder that you have an event today </p>
+                            <p class="mb-1 preview-subject"> {{ $not->type }}</p>
+                            <p class="mb-0 text-muted ellipsis"> {{ $not->data }} </p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-settings text-danger"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="mb-1 preview-subject">Settings</p>
-                            <p class="mb-0 text-muted ellipsis"> Update dashboard </p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-link-variant text-warning"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="mb-1 preview-subject">Launch Admin</p>
-                            <p class="mb-0 text-muted ellipsis"> New admin wow! </p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <p class="p-3 mb-0 text-center">See all notifications</p>
+                    @endforeach
+
+
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -164,9 +100,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                     aria-labelledby="profileDropdown">
-                    <h6 class="p-3 mb-0">Profile</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
+                    {{-- <h6 class="p-3 mb-0">Profile</h6>
+                    <div class="dropdown-divider"></div> --}}
+                    {{-- <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
                                 <i class="mdi mdi-settings text-success"></i>
@@ -175,7 +111,7 @@
                         <div class="preview-item-content">
                             <p class="mb-1 preview-subject">My Profile</p>
                         </div>
-                    </a>
+                    </a> --}}
                     <div class="dropdown-divider"></div>
 
                     <a class="dropdown-item preview-item" href="{{ route('admin.logout') }}">
@@ -189,7 +125,7 @@
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <p class="p-3 mb-0 text-center">Advanced settings</p>
+                    {{-- <p class="p-3 mb-0 text-center">Advanced settings</p> --}}
                 </div>
             </li>
         </ul>

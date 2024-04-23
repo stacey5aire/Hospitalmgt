@@ -12,5 +12,18 @@ class MedicOrders extends Model
     protected $table = "medi_orders";
 
 
-    // protected $fillable = ['name', 'phone', 'speciality', 'room', 'time', 'day', 'fee', 'description', 'image'];
+    protected $fillable = [
+        'u_name',
+        'm_name',
+        'email',
+        'phone',
+        'user_id',
+        'm_id',
+        'price',
+        'quantity',
+        'vendor',
+        'date',
+        'payment_status',
+        'delivery_status',
+    ];
 }

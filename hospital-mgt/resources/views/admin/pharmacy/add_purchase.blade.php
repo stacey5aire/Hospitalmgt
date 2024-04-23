@@ -107,7 +107,6 @@
                                 <select class="form-control">
                                     <option>Delivered</option>
                                     <option>Pending</option>
-                                    {{-- <option>Failed</option> --}}
                                 </select>
                             </div>
                         </div>

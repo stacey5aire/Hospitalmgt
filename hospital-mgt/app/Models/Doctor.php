@@ -19,5 +19,7 @@ class Doctor extends Model
 
     protected $table = "doctors";
 
-    protected $fillable = [];
+    protected $fillable = ['name', 'gender', 'date_of_birth', 'speciality', 'membership', 'adress', 'state', 'working_time', 'contact'];
+
+    protected $doctor = ['name', 'gender', 'date_of_birth', 'speciality', 'membership', 'adress', 'state', 'working_time', 'contact'];
 }

@@ -2,13 +2,7 @@
     <div class="pt-2 sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="{{ route('admin.dashboard') }}">
             {{-- <img src="assets/images/logo.svg" alt="logo" /> --}}
-            <h2 class="text-center text-primary">Atlas Hospital <span class="menu-icon">
-                    <i class="mdi mdi-ambulance"></i>
-                </span></h2>
-        </a>
-        <a class="sidebar-brand brand-logo-mini" href="{{ route('admin.dashboard') }}">
-            {{-- <img src="assets/images/logo-mini.svg" alt="logo" /> --}}
-            <h1>Atlas Hospital</h1>
+            <span class="text-center text-primary">Atlas Hospital <i class="mdi mdi-ambulance"></i></span>
         </a>
 
     </div>
